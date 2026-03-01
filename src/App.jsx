@@ -21,15 +21,22 @@ export default function App(){
     });
     
     // take response as blob and download immediately 
-    const blob = await res.blob(); 
-    const url= window.URL.createObjectURL(blob);
+    // const blob = await res.blob(); 
+    // const url= window.URL.createObjectURL(blob);
 
-    const a = document.createElement("a");
-    a.href = url; 
-    a.download = "converted.srt";
-    document.body.appendChild(a);
-    a.click();
-    a.remove(); 
+    // const a = document.createElement("a");
+    // a.href = url; 
+    // a.download = "converted.srt";
+    // document.body.appendChild(a);
+    // a.click();
+    // a.remove(); 
+   
+    if(!res.ok) throw new Error("Upload failed");
+    const data = await res.json(); 
+    console.log("Upload response: ", data);
+    
+    // optionally trigger download 
+    const downloadURL = `https://127.0.0.1:8000/${data.converted_file}` ;
   }
 
   return(
