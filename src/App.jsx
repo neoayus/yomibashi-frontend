@@ -2,6 +2,7 @@ import { useState } from "react"
 
 export default function App(){
   const [file, setFile] = useState(null);
+  const [downloadURL, setDownloadURL] = useState(null);
 
   function handleChange(e){
     const file = e.target.files[0];
@@ -10,7 +11,7 @@ export default function App(){
   
   const handleUpload = async() => {
 
-    console.log("haneling upload...");
+    console.log("handeling upload...");
 
     const formData = new FormData(); 
     formData.append("file", file);
@@ -35,8 +36,20 @@ export default function App(){
     const data = await res.json(); 
     console.log("Upload response: ", data);
     
-    // optionally trigger download 
-    const downloadURL = `https://127.0.0.1:8000/${data.converted_file}` ;
+    // save the download url from backend 
+    setDownloadURL(`http://127.0.0.1:8000/download/${data.converted_file}`);
+  };
+  
+  function handleDownload(){
+    if (!downloadURL) return alert("No Files to Download yet!");
+
+    console.log("downloading...");
+    const a = document.createElement("a");
+    a.href = downloadURL ; 
+    a.download = "";
+    document.body.appendChild(a);
+    a.click();
+    a.remove(); 
   }
 
   return(
@@ -44,6 +57,7 @@ export default function App(){
       <h2>KA-ROM : Kanji 2 Romaji Subtitle Converter </h2>
       <input type="file" onChange={handleChange}/>
       <button onClick={handleUpload}>Upload</button>
+      <button onClick={handleDownload} disabled={!downloadURL}> Download </button>
     </>
   )
 }
