@@ -1,6 +1,6 @@
-# KAROM (Frontend)
+# YokiBashi(Frontend)
 
-Karom is a tool where users can upload Japanese subtitle files and get Romaji subtitles in return, helping learners understand spoken Japanese more easily while watching movies, anime, or shows.
+YokiBashi is a tool where users can upload Japanese subtitle files and get Romaji subtitles in return, helping learners understand spoken Japanese more easily while watching movies, anime, or shows.
 
 ## Why does this repo Exist??
 
