@@ -43,6 +43,8 @@ p.logo{
   font-family: Covered By Your Grace; 
   font-size: 40px;
   color: rgb(234, 62, 62);
+  display: flex;
+  justify-content: center;
 }
 
 .hero p.heading{
