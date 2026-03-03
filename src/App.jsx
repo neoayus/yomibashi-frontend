@@ -1,9 +1,14 @@
 import { useState } from "react"
-import {Github, Linkedin} from "./SVG"
+import {Github, Linkedin, YomibashiKanji} from "./SVG"
 
 export default function App(){
   const [file, setFile] = useState(null);
   const [downloadURL, setDownloadURL] = useState(null);
+  const [kanjiLogo, setKanjiLogo] = useState(false);
+
+  function handleSwitch(){
+    setKanjiLogo((kanjiLogo) => !kanjiLogo)
+  }
 
   function handleChange(e){
     const file = e.target.files[0];
@@ -54,7 +59,7 @@ export default function App(){
 
   return(
     <>
-      <NavBar />
+      <NavBar kanjiLogo={kanjiLogo} handleSwitch={handleSwitch}/>
       <HeroSection />
       <FileManagement handleUpload={handleUpload} handleDownload={handleDownload} handleChange={handleChange} downloadURL={downloadURL}/> 
       <Footer/>
@@ -62,10 +67,12 @@ export default function App(){
   )
 }
 
-function NavBar(){
+function NavBar({kanjiLogo, handleSwitch }){
   return(
     <div className="nav">
-      <p className="logo">YomiBashi</p>
+      <p className="logo" onClick={handleSwitch}> {
+        !kanjiLogo ? "YomiBashi" : <YomibashiKanji />
+      }</p> 
     </div>
   )
 }
