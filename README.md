@@ -3,6 +3,8 @@
 YomiBashi is a React-based web application that allows users to upload Japanese `.srt` subtitle files and convert them into a more readable format (romaji/furigana-style) for language learning.
 This frontend connects to the YomiBashi FastAPI backend and provides a simple, mobile-first interface for file upload and download.
 
+live link: [yomibashi@netlify](https://yomibashi.netlify.app/)
+
 ## Why need a Intra-Language Subtitle Converter? 
 Learning a new language through movies, anime, and TV shows is one of the most effective and enjoyable methods.
 Many Japanese learners prefer watching content with subtitles to improve listening and reading skills at the same time.
