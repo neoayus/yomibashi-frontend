@@ -1,6 +1,6 @@
-# YokiBashi(Frontend)
+# Yomibashi(Frontend)
 
-YokiBashi is a tool where users can upload Japanese subtitle files and get Romaji subtitles in return, helping learners understand spoken Japanese more easily while watching movies, anime, or shows.
+Yomibashi is a tool where users can upload Japanese subtitle files and get Romaji subtitles in return, helping learners understand spoken Japanese more easily while watching movies, anime, or shows.
 
 ## Why does this repo Exist??
 

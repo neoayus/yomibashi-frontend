@@ -16,7 +16,7 @@ export default function App(){
     const formData = new FormData(); 
     formData.append("file", file);
     
-    const res = await fetch("https://yokibashi.onrender.com/upload", {
+    const res = await fetch("https://yomibashi.onrender.com/upload", {
       method: "POST", 
       body: formData,
     });
@@ -36,7 +36,7 @@ export default function App(){
     console.log("Upload response: ", data);
     
     // save the download url from backend 
-    setDownloadURL(`https://yokibashi.onrender.com/download/${data.converted_file}`);
+    setDownloadURL(`https://yomibashi.onrender.com/download/${data.converted_file}`);
   };
   
   function handleDownload(){
