@@ -194,3 +194,8 @@ a{
 svg{
   width: 24px; 
 }
+
+svg.logo{
+  width: 100%;
+  height: 40px;  
+}
